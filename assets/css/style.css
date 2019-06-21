@@ -37,6 +37,7 @@
 /*=====================================
    01. Typography CSS
 ===================================== */
+
 body {
     color: #151515;
     font-size: 0.9375rem;
@@ -45,6 +46,13 @@ body {
     line-height: 1.6;
     margin: 0;
 }
+
+.anchor{
+    display: block;
+    height: 115px; /*same height as header*/
+    margin-top: -115px; /*same height as header*/
+    visibility: hidden;
+  }
 
 @media only screen and (max-width: 575.98px) {
     body {
