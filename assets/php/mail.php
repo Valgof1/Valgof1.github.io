@@ -20,10 +20,10 @@ header("Access-Control-Allow-Origin: *");
         }
 
         // Set the recipient email address.
-        $recipient = "your@email.here";
+        $recipient = "hecliegebusinessgame@gmail.com";
 
         // Set the email subject.
-        $subject = "Businex - Mail From $first_name";
+        $subject = "Business Game - Mail From $first_name";
 
         // Build the email content.
         $email_content = "Name: $first_name + $last_name\n";
