@@ -38,6 +38,10 @@
    01. Typography CSS
 ===================================== */
 
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     color: #151515;
     font-size: 0.9375rem;
