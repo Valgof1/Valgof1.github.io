@@ -1037,6 +1037,13 @@ only screen and (min-width: 768px) and (max-width: 991.98px) {
     }
 }
 
+@media only screen and (max-width: 767.98px),
+only screen and (min-width: 768px) and (max-width: 991.98px) {
+    .header-area {
+        padding: 0px 0;
+    }
+}
+
 .header-area.sticky .main-menu .submenu-nav {
     margin-top: 25px;
 }
