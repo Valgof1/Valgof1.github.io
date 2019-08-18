@@ -9,10 +9,16 @@ header("Access-Control-Allow-Origin: *");
         $last_name = trim($_POST["last_name"]);
         $email = filter_var(trim($_POST["email_address"]), FILTER_SANITIZE_EMAIL);
         $phone = trim($_POST["phone_no"]);
+        $birthdate = trim($_POST["birthdate"]);
+        $school = trim($_POST["school"]);
+        $studies = trim($_POST["studies"]);
+        $year = trim($_POST["year"]);
+        $partner_first_name = trim($_POST["partner_first_name"]);
+        $partner_last_name = trim($_POST["partner_last_name"]);
         $message = trim($_POST["con_message"]);
 
         // Check that data was sent to the mailer.
-        if ( empty($first_name) OR ( empty($last_name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if ( empty($first_name) OR ( empty($last_name) OR empty($message) OR empty($phone) OR empty($birthdate) OR empty($school) OR empty($studies) OR empty($year) OR empty($partner_first_name) OR empty($partner_last_name)    OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
             echo "Please complete the form and try again.";
@@ -38,11 +44,11 @@ header("Access-Control-Allow-Origin: *");
         if (mail($recipient, $subject, $email_content, $email_headers)) {
             // Set a 200 (okay) response code.
             http_response_code(200);
-            echo "Thank You! Your message has been sent.";
+            echo "Thank You! Your registration has been sent successfully.";
         } else {
             // Set a 500 (internal server error) response code.
             http_response_code(500);
-            echo "Oops! Something went wrong and we couldn't send your message.";
+            echo "Oops! Something went wrong and we couldn't send your registration, please try again";
         }
 
     } else {
