@@ -18,7 +18,7 @@ header("Access-Control-Allow-Origin: *");
         $message = trim($_POST["con_message"]);
 
         // Check that data was sent to the mailer.
-        if ( empty($first_name) OR ( empty($last_name) OR empty($message) OR empty($phone) OR empty($birthdate) OR empty($school) OR empty($studies) OR empty($year) OR empty($partner_first_name) OR empty($partner_last_name)    OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if ( empty($first_name) OR ( empty($last_name) OR empty($phone) OR empty($birthdate) OR empty($school) OR empty($studies) OR empty($year) OR empty($partner_first_name) OR empty($partner_last_name)    OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
             echo "Please complete the form and try again.";
@@ -35,7 +35,13 @@ header("Access-Control-Allow-Origin: *");
         $email_content = "Name: $first_name + $last_name\n";
         $email_content .= "Phone: $phone\n\n";
         $email_content .= "Email: $email\n\n";
-        $email_content .= "Message:\n$message\n";
+        $email_content .= "Birthdate: $birthdate\n\n";
+        $email_content .= "School: $school\n\n";
+        $email_content .= "Studies: $studies\n\n";
+        $email_content .= "Year: $year\n\n";
+        $email_content .= "Partner's first name: $partner_first_name\n\n";
+        $email_content .= "Partner's last name: $partner_last_name\n\n";
+        $email_content .= "Comment:\n$message\n";
 
         // Build the email headers.
         $email_headers = "From: $first_name <$email>";
