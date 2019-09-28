@@ -15,6 +15,7 @@ header("Access-Control-Allow-Origin: *");
         $year = trim($_POST["year"]);
         $partner_first_name = trim($_POST["partner_first_name"]);
         $partner_last_name = trim($_POST["partner_last_name"]);
+        $linkedin_link = trim($_POST["linkedin_link"]);
         $message = trim($_POST["con_message"]);
 
         // Check that data was sent to the mailer.
@@ -41,6 +42,7 @@ header("Access-Control-Allow-Origin: *");
         $email_content .= "Year: $year\n\n";
         $email_content .= "Partner's first name: $partner_first_name\n\n";
         $email_content .= "Partner's last name: $partner_last_name\n\n";
+        $email_content .= "LinkedIn Profile: $linkedin_link\n\n";
         $email_content .= "Comment:\n$message\n";
 
         // Build the email headers.
