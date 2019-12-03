@@ -39,7 +39,26 @@
     <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script>
+            function disableSubmit() {
+             document.getElementById("submit").disabled = true;
+            }
+           
+             function activateButton(element) {
+           
+                 if(element.checked) {
+                   document.getElementById("submit").disabled = false;
+                  }
+                  else  {
+                   document.getElementById("submit").disabled = true;
+                 }
+           
+             }
+</script>
+
 </head>
+
+
 
 <body>
 
@@ -221,11 +240,14 @@
                                         </div>
 
                                         <div class="single-input-item mb-0 mt-40">
-                                            <button class="btn-outline">Send application</button>
+                                           <button class="btn-outline" type="submit" name="submit" id="submit">Send application</button>
+                                           <!-- <input class="btn-outline" type="submit" name="submit" id="submit">-->
+
                                         </div>
 
                                         <div class="container mt-3">
-                                            <p>By clicking on "Send application", you accept the <a href="tc.html">Terms and Conditions</a> and that your data will be shared with our partners.</p>
+                                                <body onload="disableSubmit()">
+                                                <p> <input type="checkbox" name="terms" id="terms" onchange="activateButton(this)">  I accept the <a href="tc.html">Terms and Conditions</a> and that my data will be shared with our partners.</p>
                                         </div>
 
                                         <div class="form-message"></div>
@@ -235,6 +257,9 @@
                         </div>
                     </div>
                 </div>
+
+                                       
+                     
 
                 <div class="col-lg-4">
                     <div class="contact-information contact-method">
