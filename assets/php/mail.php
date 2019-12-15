@@ -19,7 +19,8 @@ header("Access-Control-Allow-Origin: *");
         $message = trim($_POST["con_message"]);
 
         // Check that data was sent to the mailer.
-        if ( empty($first_name) OR ( empty($last_name) OR empty($phone) OR empty($birthdate) OR empty($school) OR empty($studies) OR empty($year) OR empty($partner_first_name) OR empty($partner_last_name)    OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if ( empty($first_name) OR ( empty($last_name) OR empty($phone) OR empty($birthdate) OR empty($school) OR empty($studies) OR empty($year) OR empty($partner_first_name) OR empty($partner_last_name)    OR !filter_var($email, FILTER_VALIDATE_EMAIL))) 
+        {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
             echo "Please complete the form and try again.";
