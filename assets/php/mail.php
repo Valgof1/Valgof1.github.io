@@ -46,7 +46,7 @@ header("Access-Control-Allow-Origin: *");
         $email_content .= "Comment:\n$message\n";
 
         // Build the email headers.
-        $email_headers = 'From:' . $first_name <$email>;
+        $email_headers = "From: $first_name <$email>";
 
         // Send the email.
         if (mail($recipient, $subject, $email_content, $email_headers)) {
