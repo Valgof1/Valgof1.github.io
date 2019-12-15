@@ -27,7 +27,7 @@ header("Access-Control-Allow-Origin: *");
         }
 
         // Set the recipient email address.
-        $recipient = "hecliegebusinessgame@gmail.com";
+        $recipient = "hecliege@hecliegebusinessgame.com";
 
         // Set the email subject.
         $subject = "Business Game - Mail From $first_name";
